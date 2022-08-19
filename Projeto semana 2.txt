@@ -1,0 +1,18 @@
+// Código (1) - Ordenar a lista pela ordem do salário mais alto.
+
+SELECT * FROM employee ORDER BY SALARY DESC;
+
+// Código (2) - Todos os departamentos sem repitir.
+
+SELECT DEPARTEMENT FROM employee
+GROUP BY DEPARTEMENT;
+
+// Código (3) - Média dos salários
+
+SELECT (SUM(SALARY)/COUNT(*))FROM employee;
+
+// Código (4) - Select que retorna nome, sobrenome, e salário dos funcionarios com o salário acima da média.
+
+SELECT FIRST_NAME, LAST_NAME, SALARY FROM EMPLOYEE 
+WHERE SALARY > (SELECT (SUM(SALARY)/COUNT(*))FROM employee);
+
